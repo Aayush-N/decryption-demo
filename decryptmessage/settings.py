@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY','z%hu*6(br5tu%%v@^gze!)+(=z*kwekc3c--%f&dv*=3@h#-69')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', False)
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '127.0.0.1', '172.105.148.234').split(',')
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS')
 
 
 # Application definition
@@ -123,10 +123,10 @@ USE_TZ = True
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-LINODE_BUCKET=os.environ.get('LINODE_BUCKET', 'cfe')
+LINODE_BUCKET=os.environ.get('LINODE_BUCKET')
 LINODE_BUCKET_REGION=os.environ.get('LINODE_BUCKET_REGION',  'us-east-1')
-LINODE_BUCKET_ACCESS_KEY=os.environ.get('LINODE_BUCKET_ACCESS_KEY', 'I078SJFRJ2SW4ZWGTVSA') 
-LINODE_BUCKET_SECRET_KEY=os.environ.get('LINODE_BUCKET_SECRET_KEY', '5olkhfC60gVQh9Zfa2iwLCsAluBbddic5Ltpywgs') 
+LINODE_BUCKET_ACCESS_KEY=os.environ.get('LINODE_BUCKET_ACCESS_KEY') 
+LINODE_BUCKET_SECRET_KEY=os.environ.get('LINODE_BUCKET_SECRET_KEY') 
 
 
 AWS_S3_ENDPOINT_URL='https://static-files.us-east-1.linodeobjects.com'
