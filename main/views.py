@@ -9,7 +9,7 @@ import gnupg
 
 class MessageDecrypter(APIView):
 	"""
-	List all snippets, or create a new snippet.
+	Accepts only POST, converts the encrypted text into a decrypted text
 	"""
 	def post(self, request, format=None):
 		serializer = MessageSerializer(data=request.data)
